@@ -16,8 +16,10 @@ pipeline {
         }
 
         stage('Build') { 
-            steps { 
-                sh 'docker build -t rohanlakhani1717/mern-app:latest .'
+            steps {
+                script {
+                    app = docker.build("mern")
+                }
             }
         }
         stage('Login'){
