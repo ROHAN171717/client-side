@@ -15,7 +15,10 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build') {            
+            options {
+                timeout(time: 3, unit: 'MINUTES')
+            }
             steps {
                 script {
                     app = docker.build("mern")
