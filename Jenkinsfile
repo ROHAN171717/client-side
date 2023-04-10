@@ -20,6 +20,7 @@ pipeline {
                 script {
                     app = docker.build("mern")
                 }
+            }
         }
         stage('Login'){
             steps {
