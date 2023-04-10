@@ -15,12 +15,11 @@ pipeline {
             }
         }
 
-        stage('Build') { 
+        stage('Build') {
             steps {
                 script {
                     app = docker.build("mern")
                 }
-            }
         }
         stage('Login'){
             steps {
@@ -29,7 +28,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker push rohanlakhani1717/mern-app:latest'
+                sh 'docker push rohanlakhani1717/mern-app-demo:latest'
             }
         }
     }
