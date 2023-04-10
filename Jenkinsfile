@@ -17,20 +17,17 @@ pipeline {
 
         stage('Build') { 
             steps { 
-                // sh 'docker build -t rohanlakhani1717/mern-app:latest .'
-                echo "Build"
+                sh 'docker build -t rohanlakhani1717/mern-app:latest .'
             }
         }
         stage('Login'){
             steps {
-                // sh 'docker login -u  $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                echo "Login"
+                sh 'docker login -u  $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
         stage('Push') {
             steps {
-                // sh 'docker push rohanlakhani1717/mern-app:latest'
-                echo "Push"
+                sh 'docker push rohanlakhani1717/mern-app:latest'
             }
         }
     }
