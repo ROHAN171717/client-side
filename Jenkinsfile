@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build') { 
             steps { 
-                sh 'docker build -t rohanlakhani1717/mern-app:latest .'
+                sh 'docker build -t rohanlakhani1717/mern-app-demo:latest .'
             }
         }
         stage('Login'){
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                sh 'docker push rohanlakhani1717/mern-app:latest'
+                sh 'docker push rohanlakhani1717/mern-app-demo:latest'
             }
         }
     }
